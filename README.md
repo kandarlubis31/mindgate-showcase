@@ -59,24 +59,24 @@ Pengalaman undangan pernikahan **3D interaktif** yang dijual studio sebagai prod
 
 ```mermaid
 flowchart TB
- G[" Pasangan (Admin Panel)"]
- T[" Tamu Undangan ({slug})"]
- S[" Studio (Landing · Order · Inbox)"]
- subgraph FE[" React 18 + Three.js (Vite)"]
- CAVE["Cave Corridor 3D<br/>R3F · scroll gating · origami"]
- INV["Wedding Invitation<br/>countdown · galeri · RSVP"]
- ADM["Admin Panel + Order Inbox"]
- end
- API[" Server API<br/>sessions · RSVP · leads · upload"]
- DB[(" Database<br/>sessions · rsvps · leads")]
- LS[("localStorage<br/>mode standalone/demo")]
- WA[" WhatsApp<br/>wa.me deep links"]
- T --> CAVE --> INV
- INV -->|"form / WA / cutoff"| API & WA
- G --> ADM --> API
- S -->|"order → lead"| API
- API --> DB
- CAVE & INV -.->|"fallback tanpa server"| LS
+    G[" Pasangan (Admin Panel)"]
+    T[" Tamu Undangan ({slug})"]
+    S[" Studio (Landing · Order · Inbox)"]
+    subgraph FE[" React 18 + Three.js (Vite)"]
+        CAVE["Cave Corridor 3D<br/>R3F · scroll gating · origami"]
+        INV["Wedding Invitation<br/>countdown · galeri · RSVP"]
+        ADM["Admin Panel + Order Inbox"]
+    end
+    API[" Server API<br/>sessions · RSVP · leads · upload"]
+    DB[(" Database<br/>sessions · rsvps · leads")]
+    LS[("localStorage<br/>mode standalone/demo")]
+    WA[" WhatsApp<br/>wa.me deep links"]
+    T --> CAVE --> INV
+    INV -->|"form / WA / cutoff"| API & WA
+    G --> ADM --> API
+    S -->|"order → lead"| API
+    API --> DB
+    CAVE & INV -.->|"fallback tanpa server"| LS
 ```
 
 - **Stack:** React 18 · Three.js 0.170 + @react-three/fiber + drei · Vite · Tailwind · server API (sessions/RSVP/leads) · deep-link WhatsApp · Capacitor (paket mobile)
