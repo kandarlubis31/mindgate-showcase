@@ -1,4 +1,4 @@
-# 💍 Memory Lane — Undangan Pernikahan 3D yang Bisa Dijelajahi
+# Memory Lane — Undangan Pernikahan 3D yang Bisa Dijelajahi
 
 <div align="center">
 
@@ -26,17 +26,17 @@
 
 ---
 
-## ❌ Masalahnya
+## Masalahnya
 
 - Undangan digital sekarang cuma **PDF atau link statis** — dibuka 3 detik, ditutup, dilupakan
 - Pasangan ingin cerita perjalanan cinta mereka **terasa hidup**, bukan sekadar galeri foto
 - Studio pernikahan butuh cara **menjual & mengelola** undangan seperti produk: order, produksi, serah terima
 
-## ✅ Memory Lane
+## Memory Lane
 
 Pengalaman undangan pernikahan **3D interaktif** yang dijual studio sebagai produk digital — satu pasangan, satu sesi, satu pengalaman yang tidak terlupakan.
 
-### 🎬 Perjalanan Tamu
+### Perjalanan Tamu
 
 1. **Buka Undangan** — gerbang sinematik membuka lorong
 2. **Cave Corridor 3D** — koridor lengkung bertema *Sky & Pearl*: dinding gading, cincin arch metalik mutiara, lantai memantul, kabut lembut, percikan *fairy embers*
@@ -44,33 +44,33 @@ Pengalaman undangan pernikahan **3D interaktif** yang dijual studio sebagai prod
 4. **Origami Crane** — di ujung lorong, satu burung kertas meluncur menyeberangkan tamu ke…
 5. **Wedding Invitation** — nama pasangan, countdown, galeri, dan **RSVP**
 
-### ✨ Fitur
+### Fitur
 
-- 🏔️ **3D sungguhan** — Three.js + react-three-fiber: dolly entry, scroll gating per foto, fog + partikel, jalan penuh di HP
-- 💌 **RSVP komplet** — form (hadir/ragu/tidak + jumlah tamu + pesan + nomor WA), **RSVP via WhatsApp satu-tap**, cutoff otomatis 7 hari sebelum acara (form terkunci + countdown), satu jawaban per tamu & bisa diubah
-- 📊 **Tools pasangan** — export CSV + ringkasan WhatsApp, chat per-tamu, panel admin (detail, musik, foto)
-- 🏢 **Multi-tenant untuk studio** — setiap pasangan = 1 session dengan slug unik (`/{slug}`); **Order Inbox** dengan pipeline Baru → Dihubungi → Jadi/Batal + chat WhatsApp; harga & nomor studio bisa diganti tanpa rebuild
-- 🎵 **Audio per sesi** — lagu request pasangan, fallback ambient generatif
-- 🖼️ **Standalone demo** — mode tanpa server (data di browser) untuk showcase instan
+- **3D sungguhan** — Three.js + react-three-fiber: dolly entry, scroll gating per foto, fog + partikel, jalan penuh di HP
+- **RSVP komplet** — form (hadir/ragu/tidak + jumlah tamu + pesan + nomor WA), **RSVP via WhatsApp satu-tap**, cutoff otomatis 7 hari sebelum acara (form terkunci + countdown), satu jawaban per tamu & bisa diubah
+- **Tools pasangan** — export CSV + ringkasan WhatsApp, chat per-tamu, panel admin (detail, musik, foto)
+- **Multi-tenant untuk studio** — setiap pasangan = 1 session dengan slug unik (`/{slug}`); **Order Inbox** dengan pipeline Baru → Dihubungi → Jadi/Batal + chat WhatsApp; harga & nomor studio bisa diganti tanpa rebuild
+- **Audio per sesi** — lagu request pasangan, fallback ambient generatif
+- **Standalone demo** — mode tanpa server (data di browser) untuk showcase instan
 
 ---
 
-## 🏗️ Arsitektur
+## Arsitektur
 
 ```mermaid
 flowchart TB
-    G["👰🤵 Pasangan (Admin Panel)"]
-    T["👥 Tamu Undangan ({slug})"]
-    S["💼 Studio (Landing · Order · Inbox)"]
-    subgraph FE["⚛️ React 18 + Three.js (Vite)"]
+    G[" Pasangan (Admin Panel)"]
+    T[" Tamu Undangan ({slug})"]
+    S[" Studio (Landing · Order · Inbox)"]
+    subgraph FE[" React 18 + Three.js (Vite)"]
         CAVE["Cave Corridor 3D<br/>R3F · scroll gating · origami"]
         INV["Wedding Invitation<br/>countdown · galeri · RSVP"]
         ADM["Admin Panel + Order Inbox"]
     end
-    API["🖥️ Server API<br/>sessions · RSVP · leads · upload"]
-    DB[("🗄️ Database<br/>sessions · rsvps · leads")]
+    API[" Server API<br/>sessions · RSVP · leads · upload"]
+    DB[(" Database<br/>sessions · rsvps · leads")]
     LS[("localStorage<br/>mode standalone/demo")]
-    WA["💬 WhatsApp<br/>wa.me deep links"]
+    WA[" WhatsApp<br/>wa.me deep links"]
     T --> CAVE --> INV
     INV -->|"form / WA / cutoff"| API & WA
     G --> ADM --> API
@@ -84,12 +84,22 @@ flowchart TB
 
 ---
 
-## 🔒 Tentang Source Code
+## English
+
+**Memory Lane** is a 3D wedding invitation that guests can walk through. Instead of a static link, guests follow a memory corridor and arrive at the couple's invitation.
+
+It is built for Indonesian weddings where the invitation itself is part of the celebration, and runs in the browser without an install.
+
+The source code is not published; this repository documents the product.
+
+---
+
+## Tentang Source Code
 
 Repository ini adalah **showcase** — dokumentasi produk, bukan kode sumber.
 Source code Memory Lane tidak dipublikasikan dan semua hak dilindungi. Lihat [`LICENSE`](LICENSE).
 
-> 💬 Demo, kolaborasi, atau lisensi? Hubungi [Kandar Lubis](https://github.com/kandarlubis31).
+> Demo, kolaborasi, atau lisensi? Hubungi [Kandar Lubis](https://github.com/kandarlubis31).
 
 ---
 
